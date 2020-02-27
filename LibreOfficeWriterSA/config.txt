@@ -1,0 +1,44 @@
+#use the bugzilla API to fetch products ,components and versions
+FETCH_PRODUCTS=true
+
+#in order to fetch bugs ,you need to specify (activate) which of the saved components/versions
+#you want to use by setting active field=1 in the database.Use this to auto activate the 
+#defaults (components : Writer,Draw,Calc and versions : all containing "all version" in name)
+AUTO_ACTIVATE=true
+
+#use the bugzilla API to fetch bugs associated with the products and active components/versions
+#saved in the database
+FETCH_BUGS=true
+
+#use the bugzilla API to fetch comments associated with the bugs saved in the database
+FETCH_COMMENTS=true
+
+#use vader sentiment analyzer on the comments saved to database
+USE_VADER=true
+
+#use meaning cloud API to analyze comments saved to database
+USE_MEANINGCLOUD=true
+
+#export data from analyzing using vader sentiment analyzer
+EXPORT_VADER=false
+
+#export data from analyzing using meaning cloud API
+EXPORT_MC=false
+
+#export data by bug (scores are extracted from related comments as mean of all comments)
+EXPORT_BUGS_ONLY=false
+
+#export data by comment with bug_id as filename
+EXPORT_COMMENTS_ONLY=false
+
+#this is the subscription key used by MeaniningCloud to allow requests
+#set this to something else if another subscription is made and new key produced
+#MC_SUB_KEY=d7d3b4751e27d48d4cd67bf92b207761
+
+#set to fetch data using a different Rest API (mainly bugzilla) 
+#or comment out to use default "https://bugs.documentfoundation.org/"
+#OVERRIDE_API=https://bugzilla.mozilla.org/
+
+#set to fetch different product (make sure the product exists under the base url) 
+#or comment out to use default "LibreOffice"
+#OVERRIDE_PRODUCT=FireFox
